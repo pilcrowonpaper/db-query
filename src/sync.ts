@@ -15,6 +15,14 @@ export class SyncDatabase<_ExecuteResult> {
 		return new Row(result[0]);
 	}
 
+	public queryOneOrThrow(statement: string, params: unknown[]): Row {
+		const row = this.queryOne(statement, params);
+		if (row === null) {
+			throw new Error("Query did not return any rows");
+		}
+		return row;
+	}
+
 	public query(statement: string, params: unknown[]): Rows {
 		const result = this.adapter.query(statement, params);
 		return new Rows(result);

@@ -119,11 +119,21 @@ class Rows {
 
 #### Database.queryOne()
 
-`AsyncDatabase` will return `Promise<Row| null>`.
+`AsyncDatabase` will return `Promise<Row | null>`.
 
 ```ts
 function queryOne(statement: string, args: any[]): Row | null;
 ```
+
+#### Database.queryOneOrThrow()
+
+`AsyncDatabase` will return `Promise<Row>`. Similar to `queryOne()` but throws an `Error` if there are no rows.
+
+```ts
+function queryOne(statement: string, args: any[]): Row;
+```
+
+### Row
 
 `bigintNullable()` and `bigint()` will convert integer Numbers to BigInts. All other methods will not do any implicit type conversion (e.g. Number => Boolean). Methods will throw an `Error` if the type is invalid.
 
@@ -143,7 +153,7 @@ class Row {
 }
 ```
 
-#### Adapter
+### Adapter
 
 `AsyncAdapter` methods should return a promise.
 

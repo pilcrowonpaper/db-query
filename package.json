@@ -2,7 +2,7 @@
 	"name": "@pilcrowjs/db-query",
 	"description": "Add type-safety to your database drivers.",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"module": "dist/index.js",
