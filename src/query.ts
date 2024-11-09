@@ -79,18 +79,18 @@ export class Row {
 
 	public booleanNullable(index: number): boolean | null {
 		const value = this.get(index);
-		if (typeof value !== "boolean" && value !== null) {
+		if ((typeof value !== "number" || (value !== 0 && value !== 1)) && value !== null) {
 			throw new Error("Not a boolean or null");
 		}
-		return value;
+		return value === 1;
 	}
 
 	public boolean(index: number): boolean {
 		const value = this.get(index);
-		if (typeof value !== "boolean") {
+		if (typeof value !== "number" || (value !== 0 && value !== 1)) {
 			throw new Error("Not a boolean");
 		}
-		return value;
+		return value === 1;
 	}
 
 	public bytesNullable(index: number): Uint8Array | null {
