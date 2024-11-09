@@ -58,7 +58,6 @@ const adapter: SyncAdapter<sqlite3.RunResult> = {
 	execute: (statement: string, params: unknown[]): sqlite3.RunResult => {
 		const result = sqlite
 			.prepare(statement)
-			.raw()
 			.run(...params);
 		return result;
 	}
